@@ -1,6 +1,9 @@
 
 This [Cheat Engine](http://cheatengine.org/) table is a collection of scripts for managing a modded Sub Rosa 0.29 dedicated server.
 
+Some of them are meant to be used in game mode 6 (flimpo assault).
+
+New Team Spawns v0.4 uses Monsota spawn point for teams that don't have it set.
 
 ```
 

@@ -2820,7 +2820,7 @@ imul edi,edi,00003118
         </CheatEntry>
         <CheatEntry>
           <ID>128</ID>
-          <Description>"magnum grappling hook  v2"</Description>
+          <Description>"magnum grappling hook    v3"</Description>
           <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(i0,dedicated.exe+8F0FB20)
@@ -2916,6 +2916,9 @@ newmem:
 cmp [esi+dedicated.exe+1936A0],3
 jne originalcode
 
+cmp [esi+dedicated.exe+1936A4],#475
+jl originalcode
+
 pushad
 
 mov eax,[esi+dedicated.exe+1936A8]
@@ -2990,7 +2993,10 @@ label(originalcode2)
 label(exit2)
 
 newmem2:
+
 mov [esi-00000198],00000001
+
+     pushad
 
 mov ebx,[esi-184]
 cmp ebx,-1
@@ -3023,11 +3029,13 @@ pop eax
 ja originalcode2
 
 mov [esi-00000198],0
-//mov [esi-00000194],1
+mov [esi-00000194],1
 
+     popad
 jmp dedicated.exe+69F62
 
 originalcode2:
+   popad
 //mov [esi-00000198],00000001
 
 exit2:
